@@ -1,0 +1,23 @@
+<form (ngSubmit)="validateUser()">
+    <div class="card-header bg-success text-white">Login<div>{{ errorMessage }}</div>
+    </div>
+    <div class="card-body">
+        <div class="mb-3 mt-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"
+                [(ngModel)]="newUser.username">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="text" class="form-control" id="password" placeholder="Enter password" name="password"
+                [(ngModel)]="newUser.password">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="role" class="form-label">Role: </label><br>
+            <input type="radio" id="admin" name="admin" value="admin" [(ngModel)]="newUser.role"/>Admin <input type="radio" id="employee" name="employee" value="employee" [(ngModel)]="newUser.role"/>Employee
+            <!-- <input type="text" class="form-control" id="role" placeholder="Enter role" name="role"
+                [(ngModel)]="newUser.role"> -->
+        </div>
+    </div>
+    <div class="card-footer bg-success"><button type="submit" class="btn btn-light">Login</button></div>
+</form>
