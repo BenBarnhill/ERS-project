@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mergeMap } from 'rxjs';
 import { Expense } from '../expense.model';
 import { ExpenseService } from '../expense.service';
 
@@ -24,12 +25,12 @@ export class ListPendingAllComponent implements OnInit {
     });
   }
 
-  denyRequest(){
-
+  denyRequest(expenseId: number){
+    this.expenseService.fetchPending(expenseId).pipe( mergeMap((firstResponse) => this.expenseService.denyRequest(firstResponse))).pipe( mergeMap((secondResponse) => this.expenseService.deletePending(secondResponse.finalId))).pipe( mergeMap((thirdResponse) => this.expenseService.fetchAllPending())).subscribe((lastResponse) => this.allExpenses = lastResponse)
   }
 
-  approveRequest(){
-
+  approveRequest(expenseId: number){
+    this.expenseService.fetchPending(expenseId).pipe( mergeMap((firstResponse) => this.expenseService.approveRequest(firstResponse))).pipe( mergeMap((secondResponse) => this.expenseService.deletePending(secondResponse.finalId))).pipe( mergeMap((thirdResponse) => this.expenseService.fetchAllPending())).subscribe((lastResponse) => this.allExpenses = lastResponse)
   }
 
 }

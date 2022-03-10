@@ -6,5 +6,5 @@ export interface Employee{
     empContact: number,
     empEmail: string,
     empAddress: string,
-    empAdmin: number
+    empRole: string
 }

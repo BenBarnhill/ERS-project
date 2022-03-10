@@ -5,7 +5,7 @@
                 <a class="nav-link" routerLink="request">Submit Expense Request</a>
             </li>
             <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
-                <a class="nav-link" routerLink="response">Resolve Expense Request</a>
+                <a class="nav-link" routerLink="homepage"><i class="material-icons">home</i></a>
             </li>
             <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
                 <a class="nav-link" routerLink="pending-all">View Pending Expenses</a>
@@ -13,12 +13,12 @@
             <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
                 <a class="nav-link" routerLink="resolved-all">View Resolved Expenses</a>
             </li>
-            <!-- <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='customer'">
-                <a class="nav-link" routerLink="list-fruit">Fruit List Component</a>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
+                <a class="nav-link" routerLink="list-employees">Employee List</a>
             </li>
             <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
-                <a class="nav-link" routerLink="book-crud">Book List Component</a>
-            </li> -->
+                <a class="nav-link" routerLink="list-employee-expense">Employee Expenses</a>
+            </li>
             <li class="nav-item" *ngIf="!isLoggedIn()">
                 <a class="nav-link" routerLink="login">Login</a>
             </li>

@@ -15,20 +15,8 @@ export class ExpenseService {
 
   constructor(private http: HttpClient) { }
 
-  fetchAllEmployees(): Observable<Employee[]>{
-    return this.http.get<Employee[]>('http://localhost:4040/api/v1/employees')
-  }
-
-  fetchEmployee(empId: number): Observable<Employee>{
-    return this.http.get<Employee>('http://localhost:4040/api/v1/employees/'+empId);
-  }
-
   fetchAdmin(adminId: number): Observable<Admin>{
     return this.http.get<Admin>('http://localhost:4040/api/v1/admin/'+adminId);
-  }
-
-  fetchEmployeeExpenses(empId: number): Observable<Expense[]>{
-    return this.http.get<Expense[]>('http://localhost:4040/api/v1/expenses/'+empId);
   }
 
   fetchAllPending(): Observable<Expense[]>{
@@ -51,6 +39,9 @@ export class ExpenseService {
     return this.http.post<Final>('http://localhost:4040/api/v1/requests/deny', JSON.stringify(pendingModel))
   }
 
+  fetchPending(pendingId: number): Observable<Pending>{
+    return this.http.get<Pending>('http://localhost:4040/api/v1/requests/'+pendingId);
+  }
 
 
 }

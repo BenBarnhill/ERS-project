@@ -5,5 +5,6 @@ export interface Admin{
     adminLastName: string,
     adminContact: number,
     adminEmail: string,
-    adminAddress: string
+    adminAddress: string,
+    adminRole: string
 }

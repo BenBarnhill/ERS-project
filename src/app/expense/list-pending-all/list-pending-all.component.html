@@ -20,14 +20,14 @@
         <tr *ngFor = "let expense of allExpenses">
             <td>{{ expense.expenseId }}</td>
             <td>{{ expense.expenseEmp }}</td>
-            <td>{{ expense.expenseAmount }}</td>
+            <td>{{ expense.expenseAmount | currency:'USD' }}</td>
             <td>{{ expense.expenseReason }}</td>
             <td>{{ expense.expenseCreated }}</td>
             <td>{{ expense.expenseResolved }}</td>
             <td>{{ expense.expenseAdmin }}</td>
             <td>{{ expense.expenseStatus }}</td>
-            <td><button class = "btn btn-primary" (click)="approveRequest()"><i class="material-icons">edit</i></button></td>
-            <td><button class = "btn btn-danger" (click)="denyRequest()"><i class="material-icons">delete</i></button></td>
+            <td><button class = "btn btn-success" (click)="approveRequest(expense.expenseId)"><i class="material-icons">thumb_up</i></button></td>
+            <td><button class = "btn btn-danger" (click)="denyRequest(expense.expenseId)"><i class="material-icons">thumb_down</i></button></td>
         </tr>
     </tbody>
 </table>
