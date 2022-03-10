@@ -1,8 +1,10 @@
 <div class="container">
+    <h3>Expenses by Employee</h3>
     <form (ngSubmit)="fetchEmployeeExpenses()">
         <div>
-            <label for="empId" class="form-label">Employee ID:</label>
-            <input type="text" class="form-control" id="empId" placeholder="Enter Employee Id" name="empId" [(ngModel)]="newEmployee.empId"> <button type="submit" class="btn btn-light">List Expenses</button>
+            <label for="empId" class="form-label">Employee ID: </label><br>
+            <input type="text" id="empId" placeholder="Enter Employee Id" name="empId" [(ngModel)]="newEmployee.empId"> 
+            <button type="submit">List Expenses</button>
         </div>
         <table class="table table-striped">
             <thead>
