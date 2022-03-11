@@ -14,6 +14,11 @@ import { ListResolvedAllComponent } from './expense/list-resolved-all/list-resol
 import { ListEmployeesComponent } from './employee/list-employees/list-employees.component';
 import { ListEmployeeExpensesComponent } from './employee/list-employee-expenses/list-employee-expenses.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { EmployeePendingComponent } from './employee/employee-pending/employee-pending.component';
+import { EmployeeInfoComponent } from './employee/employee-info/employee-info.component';
+import { EmployeeResolvedComponent } from './employee/employee-resolved/employee-resolved.component';
+import { UpdateInfoComponent } from './employee/update-info/update-info.component';
+import { WelcomeComponent } from './employee/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { HomepageComponent } from './homepage/homepage.component';
     ListResolvedAllComponent,
     ListEmployeesComponent,
     ListEmployeeExpensesComponent,
-    HomepageComponent
+    HomepageComponent,
+    EmployeePendingComponent,
+    EmployeeInfoComponent,
+    EmployeeResolvedComponent,
+    UpdateInfoComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

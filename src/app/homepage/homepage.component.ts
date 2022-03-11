@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpenseService } from '../expense/expense.service';
 import { AuthService } from '../user/auth.service';
 import { User } from '../user/user.model';
 
@@ -20,10 +21,15 @@ export class HomepageComponent implements OnInit {
     role: ""
   }
 
-  constructor(private authService: AuthService) { }
+  pendAmount: number = 0;
+
+  constructor(private authService: AuthService, private expenseService: ExpenseService) { }
 
   ngOnInit(): void {
     this.newUser = this.authService.retrieveUser();
+    this.expenseService.pendingAmount().subscribe((response) => {
+      this.pendAmount = response;
+    });
   }
 
 }

@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
       if(returnUserEmp.email == ""){
         this.errorMessage = "Invalid Credentials!"
       }else{
-        this.router.navigate(['request']);
+        this.router.navigate(['welcome']);
       }
     }
   }

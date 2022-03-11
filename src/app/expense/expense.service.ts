@@ -43,5 +43,9 @@ export class ExpenseService {
     return this.http.get<Pending>('http://localhost:4040/api/v1/requests/'+pendingId);
   }
 
+  pendingAmount(): Observable<number>{
+    return this.http.get<number>('http://localhost:4040/api/v1/amounts'); 
+  }
+
 
 }
