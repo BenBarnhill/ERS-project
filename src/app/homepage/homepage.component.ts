@@ -23,6 +23,8 @@ export class HomepageComponent implements OnInit {
 
   pendAmount: number = 0;
 
+  testVariable: String = '';
+
   constructor(private authService: AuthService, private expenseService: ExpenseService) { }
 
   ngOnInit(): void {

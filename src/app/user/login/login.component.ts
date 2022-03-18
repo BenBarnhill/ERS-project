@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   errorMessage: String = "";
+  pageName: String = 'Sign In'
 
   constructor(private userService: UserService, private router: Router) { }
 
