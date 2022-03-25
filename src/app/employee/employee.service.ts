@@ -13,31 +13,31 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   fetchAllEmployees(): Observable<Employee[]>{
-    return this.http.get<Employee[]>('http://localhost:4040/api/v1/employees')
+    return this.http.get<Employee[]>('http://localhost:4444/api/employees/')
   }
 
   fetchEmployee(empId: number): Observable<Employee>{
-    return this.http.get<Employee>('http://localhost:4040/api/v1/employees/'+empId);
+    return this.http.get<Employee>('http://localhost:4444/api/employees/'+empId);
   }
 
   fetchEmployeeExpenses(empId: number): Observable<Expense[]>{
-    return this.http.get<Expense[]>('http://localhost:4040/api/v1/expenses/'+empId);
+    return this.http.get<Expense[]>('http://localhost:4444/api/resolutions/all/'+empId);
   }
 
   viewPending(empId: number): Observable<Expense[]>{
-    return this.http.get<Expense[]>('http://localhost:4040/api/v1/pending/'+ empId);
+    return this.http.get<Expense[]>('http://localhost:4444/api/pendings/'+ empId);
   }
 
   allFinalResolved(empId: number): Observable<Expense[]> {
-    return this.http.get<Expense[]>('http://localhost:4040/api/v1/resolved/'+empId);
+    return this.http.get<Expense[]>('http://localhost:4444/api/resolutions/final/'+empId);
   }
 
   submitRequest(pendingModel: Pending): Observable<Pending> {
-    return this.http.post<Pending>('http://localhost:4040/api/v1/requests/submit', JSON.stringify(pendingModel));
+    return this.http.post<Pending>('http://localhost:4444/api/submit', pendingModel);
   }
 
   updateInfo(employeeModel: Employee): Observable<Employee>{
-    return this.http.put<Employee>('http://localhost:4040/api/v1/employees', JSON.stringify(employeeModel));
+    return this.http.put<Employee>('http://localhost:4444/api/employees/', employeeModel);
   }
 }
 

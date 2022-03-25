@@ -1,0 +1,14 @@
+<div class="container">
+
+    <h3>Submit Receipt</h3>
+    <hr>
+
+    <div>
+        <label class="btn btn-light">
+            <input type="file" name="receipt" (change)="selectFile($event)" />
+        </label>
+    </div>
+    <div>
+        <button class="btn btn-success" [disabled]="!selectedFile" (click)="submit()">Submit</button>
+    </div>
+</div>

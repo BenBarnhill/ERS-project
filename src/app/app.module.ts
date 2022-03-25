@@ -19,6 +19,7 @@ import { EmployeeInfoComponent } from './employee/employee-info/employee-info.co
 import { EmployeeResolvedComponent } from './employee/employee-resolved/employee-resolved.component';
 import { UpdateInfoComponent } from './employee/update-info/update-info.component';
 import { WelcomeComponent } from './employee/welcome/welcome.component';
+import { UploadReceiptComponent } from './expense/upload-receipt/upload-receipt.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { WelcomeComponent } from './employee/welcome/welcome.component';
     EmployeeInfoComponent,
     EmployeeResolvedComponent,
     UpdateInfoComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    UploadReceiptComponent
   ],
   imports: [
     BrowserModule,

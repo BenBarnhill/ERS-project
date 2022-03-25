@@ -38,6 +38,10 @@ export class EmployeePendingComponent implements OnInit {
     this.router.navigate(['request']);
   }
 
+  goToUploadReceipt(){
+    this.router.navigate(['upload-receipt']);
+  }
+
 
 
 }

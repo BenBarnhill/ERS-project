@@ -10,6 +10,7 @@ import { WelcomeComponent } from './employee/welcome/welcome.component';
 import { ExpenseRequestComponent } from './expense/expense-request/expense-request.component';
 import { ListPendingAllComponent } from './expense/list-pending-all/list-pending-all.component';
 import { ListResolvedAllComponent } from './expense/list-resolved-all/list-resolved-all.component';
+import { UploadReceiptComponent } from './expense/upload-receipt/upload-receipt.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuard } from './user/auth.guard';
 import { LoginComponent } from './user/login/login.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'employee-resolved', component: EmployeeResolvedComponent, canActivate:[AuthGuard]},
   {path: 'edit-info', component: UpdateInfoComponent, canActivate:[AuthGuard]},
   {path: 'employee-info', component: EmployeeInfoComponent, canActivate:[AuthGuard]},
-  {path: 'welcome', component: WelcomeComponent, canActivate:[AuthGuard]}
+  {path: 'welcome', component: WelcomeComponent, canActivate:[AuthGuard]},
+  {path: 'upload-receipt', component:UploadReceiptComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

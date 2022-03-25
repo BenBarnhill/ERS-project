@@ -12,10 +12,10 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   loginAdmin(admin: Admin): Observable<Admin>{
-    return this.http.post<Admin>('http://ec2-54-227-229-86.compute-1.amazonaws.com:9999/api/v1/login/admins', JSON.stringify(admin));
+    return this.http.post<Admin>('http://localhost:4444/api/admins/', admin);
   }
 
   loginEmployee(employee: Employee): Observable<Employee>{
-    return this.http.post<Employee>('http://ec2-54-227-229-86.compute-1.amazonaws.com:9999/api/v1/login/employees', JSON.stringify(employee));
+    return this.http.post<Employee>('http://localhost:4444/api/employees/', employee);
   }
 }

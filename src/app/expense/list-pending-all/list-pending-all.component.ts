@@ -27,16 +27,14 @@ export class ListPendingAllComponent implements OnInit {
   }
 
   denyRequest(expenseId: number){
-    this.expenseService.fetchPending(expenseId).pipe( mergeMap((firstResponse) => this.expenseService.denyRequest(firstResponse))).pipe( mergeMap((secondResponse) => this.expenseService.deletePending(secondResponse.finalId))).pipe( mergeMap((thirdResponse) => this.expenseService.fetchAllPending())).subscribe((lastResponse) => { 
+    this.expenseService.fetchPending(expenseId).pipe( mergeMap((firstResponse) => this.expenseService.denyRequest(firstResponse))).pipe( mergeMap((secondResponse) => this.expenseService.fetchAllPending())).subscribe((lastResponse) => {
       this.allExpenses = lastResponse;
-      this.router.navigate(['resolved-all']);
     });
   }
 
   approveRequest(expenseId: number){
-    this.expenseService.fetchPending(expenseId).pipe( mergeMap((firstResponse) => this.expenseService.approveRequest(firstResponse))).pipe( mergeMap((secondResponse) => this.expenseService.deletePending(secondResponse.finalId))).pipe( mergeMap((thirdResponse) => this.expenseService.fetchAllPending())).subscribe((lastResponse) => { 
+    this.expenseService.fetchPending(expenseId).pipe( mergeMap((firstResponse) => this.expenseService.approveRequest(firstResponse))).pipe( mergeMap((secondResponse) => this.expenseService.fetchAllPending())).subscribe((lastResponse) => {
       this.allExpenses = lastResponse;
-      this.router.navigate(['resolved-all']);
     });
   }
 
