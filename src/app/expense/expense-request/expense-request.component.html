@@ -13,7 +13,7 @@
                     <label for="reason" class="form-label">Reason for Reimbursement:</label>
                     <input type="reason" class="form-control" id="reason" placeholder="Enter reason for expense" name="reason"
                         required #myReason="ngModel" [(ngModel)]="newPending.pendingReason">
-                    <div *ngIf="!myReason.valid" class="small text-danger">Reason is required!</div>
+                    <div *ngIf="!myReason.valid && (myReason.dirty || myReason.touched)" class="small text-danger">Reason is required!</div>
                 </div>
                 <div class="card-footer bg-success">
                     <!-- <button type="button" (click)="updateBook()">Update</button> -->
